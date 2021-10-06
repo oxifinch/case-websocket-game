@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/oxifinch/case-websocket-game/issues"
   },
-  "homepage": "https://github.com/oxifinch/case-websocket-game#readme"
+  "homepage": "https://github.com/oxifinch/case-websocket-game#readme",
+  "dependencies": {
+    "ws": "^8.2.3"
+  }
 }
