@@ -4,7 +4,11 @@ class GameObject {
         this.yPos = yPos;
         this.width = width;
         this.height = height;
-        this.sprite = sprite;
+
+        // Create an Image object from the sprite path before assigning it
+        const sourceSprite = new Image(this.width, this.height);
+        sourceSprite.src = sprite;
+        this.sprite = sourceSprite;
     }
 
     draw(ctx) {
