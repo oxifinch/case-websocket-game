@@ -18,14 +18,19 @@ function initGame() {
 var deltaTime = 0;
 var lastFrame = 0;
 document.addEventListener("keydown", (e) => {
-    player.move(e.key);
+    player.move(e.key, deltaTime);
 });
 
 function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     // Getting/setting deltaTime
     deltaTime = arguments[0] - lastFrame;
     lastFrame = arguments[0]
+
+    // TODO: All moving sprites should be grouped in an array and have their
+    // draw methods called together
+    player.draw(ctx);
 
     requestAnimationFrame(gameLoop);
 }
