@@ -4,6 +4,7 @@ class GameObject {
         this.yPos = yPos;
         this.width = width;
         this.height = height;
+        this.active = true;
 
         // Create an Image object from the sprite path before assigning it
         const sourceSprite = new Image(this.width, this.height);
@@ -15,6 +16,11 @@ class GameObject {
         ctx.clearRect(this.xPos, this.yPos, this.width, this.height);
         ctx.drawImage(this.sprite, this.xPos, this.yPos, this.width, this.height);
     }
+
+    hide(ctx) {
+        ctx.clearRect(this.xPos, this.yPos, this.width, this.height);
+        this.active = false;
+    }
 }
 
 class PlayerCharacter extends GameObject {
@@ -23,28 +29,38 @@ class PlayerCharacter extends GameObject {
         this.speed = speed;
         this.name = name;
         this.controller = controller;
+        this.score = 0;
     }
 
     move(key, deltaTime) {
        switch (key) {
            case "ArrowLeft":
-               console.log("MOVE LEFT");
                this.xPos -= this.speed * deltaTime;
                break;
            case "ArrowRight": 
-               console.log("MOVE RIGHT");
                this.xPos += this.speed * deltaTime;
                break;
            case "ArrowUp":
-               console.log("MOVE UP");
                this.yPos -= this.speed * deltaTime;
                break;
            case "ArrowDown":
-               console.log("MOVE DOWN");
                this.yPos += this.speed * deltaTime;
                break;
            default:
                break;
        } 
+    }
+}
+
+class Mushroom extends GameObject {
+    constructor(xPos, yPos, width, height, sprite, scoreValue) {
+        super(xPos, yPos, width, height, sprite);
+        this.scoreValue = scoreValue;
+    }
+
+    pickUp(player, ctx) {
+        this.active = false;
+        player.score += this.scoreValue;
+        console.log("SCOOOORE!", player.score);
     }
 }
