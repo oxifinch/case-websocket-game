@@ -8,14 +8,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- <canvas id="canvas" style="border: 1px solid black"></canvas> -->
     <div id="app-container">
         <!-- TODO:
         1. Add name prompt/input
         2. Chat log
         3. Message text input -->
+        <section id="section-name">
+            <div id="name-prompt">
+                <label for="name-prompt-input">Enter your name:</label>
+                <input type="text" name="userName" id="name-prompt-input">            
+                <button>Submit</button>
+            </div>
+        </section>
+        
+        <hr>
+        <section id="section-chat">
 
+        </section>
+        <div id="chat-log">
+            
+        </div>
+        <div id="chat-prompt">
+            <input type="text" name="chatMessage" id="chat-prompt-input" placeholder="Type your message..">
+            <button>Send</button>
+        </div>
     </div>
     
     <script src="chat-app.js"></script>
