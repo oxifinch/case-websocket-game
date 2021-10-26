@@ -2,10 +2,18 @@ import {WebSocket, WebSocketServer} from "ws";
 import broadcastMessage from "./utils/broadcast.js";
 import saveMessage from "./utils/logging.js";
 import parseMessage from "./utils/parsing.js"; 
+import express from "express";
 
-const PORT = 8081;
+const WS_PORT = 8081;
+const EXPRESS_PORT = 8080;
 const LOG_FILE = "./logs/log01.txt";
-const wss = new WebSocketServer({ port: PORT });
+const wss = new WebSocketServer({ port: WS_PORT });
+
+const app = express();
+app.use(express.static("public"));
+app.listen(EXPRESS_PORT, () => {
+    console.log("Serving static files on port", EXPRESS_PORT);
+});
 
 // Main server function
 wss.on("connection", (ws) => {
@@ -16,7 +24,7 @@ wss.on("connection", (ws) => {
     ws.on("message", (msg) => {
         console.log("[ MESSAGE ] ", JSON.parse(msg));
         const message = JSON.parse(msg);
-        saveMessage(LOG_FILE, message);
+        //saveMessage(LOG_FILE, message);
         broadcastMessage(message, wss, ws);
     });
 
