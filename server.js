@@ -9,6 +9,10 @@ wss.on("connection", (ws) => {
 
     ws.on("message", (e) => {
         console.log("[ MESSAGE ] ", e);
+        // TODO: 
+        // 1. Parse message. 
+        // 2. Broadcast message to all users!
+        // 3. Save messages in file
     });
 
     ws.on("close", (_e) => {
