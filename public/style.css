@@ -16,4 +16,8 @@ body {
   display: border-box;
 }
 
+
+.hidden {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */

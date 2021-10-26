@@ -18,21 +18,22 @@
             <div id="name-prompt">
                 <label for="name-prompt-input">Enter your name:</label>
                 <input type="text" name="userName" id="name-prompt-input">            
-                <button>Submit</button>
+                <button id="name-prompt-button">Submit</button>
             </div>
         </section>
         
         <hr>
-        <section id="section-chat">
-
+        <section id="section-chat" class="hidden">
+            <div id="chat-log">
+                <template id="chat-message">
+                    <p> <span id="msg-name"></span> <pre id="msg-msg"></pre> <em id="msg-time"></em> </p>
+                </template>
+            </div>
+            <div id="chat-prompt">
+                <input type="text" name="chatMessage" id="chat-prompt-input" placeholder="Type your message..">
+                <button>Send</button>
+            </div>
         </section>
-        <div id="chat-log">
-            
-        </div>
-        <div id="chat-prompt">
-            <input type="text" name="chatMessage" id="chat-prompt-input" placeholder="Type your message..">
-            <button>Send</button>
-        </div>
     </div>
     
     <script src="chat-app.js"></script>
