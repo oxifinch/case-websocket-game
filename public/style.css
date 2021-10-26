@@ -51,9 +51,9 @@ body{
 #name-prompt {
   display: flex;
   float: left;
-  padding: 10px 10px 0 10px;
+  padding: 10px;
   border-radius: 0 6px 6px 0;
-  max-width: 80%;
+  
   width: auto;
   box-shadow: 0 0 4px rgba(0,0,0,14),0 4px 8px rgba(0,0,0,28);
   background: #92b1b2;
