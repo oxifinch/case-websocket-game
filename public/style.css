@@ -1,19 +1,66 @@
-* {
-    background-color: darkgrey;
-}
-
+html,
 body {
-    
-}
-
-#canvas {
-    background-color: white;
-    position: absolute;    
-    
-}
-  padding: 0;
+  height: 100%;
+  width: 100%;
   margin: 0;
-  display: border-box;
+  padding: 0;
+  background-color: #292933;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#app-container {
+  width: 300px;
+  height: 400px;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0,0,0,14),0 4px 8px rgba(0,0,0,28);
+  flex: auto;
+  background: #748387;
+  overflow: auto;
+  max-height: calc(100% - 60px);
+  padding: 10px;
+  border-radius: 20px;
+  opacity: 60%;
+}
+
+#section-chat {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 0;
+  background: #c2c7ca;
+  border-radius: 10px;
+  margin: 0 0 10px 0;
+  flex: 0 0 auto;
+  display: flex;
+  border-top: 1px solid #292933;
+  box-shadow: 0 0 4px rgba(0,0,0,14),0 4px 8px rgba(0,0,0,28);
+  opacity: 60%;
+
+}
+
+#name-prompt {
+  display: flex;
+  float: left;
+  padding: 10px 10px 0 10px;
+  border-radius: 0 6px 6px 0;
+  max-width: 80%;
+  width: auto;
+  box-shadow: 0 0 4px rgba(0,0,0,14),0 4px 8px rgba(0,0,0,28);
+  background: #92b1b2;
+}
+
+
+.hidden {
+  display: none;
+}
 /*# sourceMappingURL=style.css.map */
