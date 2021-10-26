@@ -14,10 +14,10 @@ wss.on("connection", (ws) => {
     // Parse message, save it to file and broadcast it to 
     // everyone except the sender.
     ws.on("message", (msg) => {
-        console.log("[ MESSAGE ] ", msg);
-        const message = parseMessage(msg);
+        console.log("[ MESSAGE ] ", JSON.parse(msg));
+        const message = JSON.parse(msg);
         saveMessage(LOG_FILE, message);
-        broadcastMessage(message, wss, message.name);
+        broadcastMessage(message, wss, ws);
     });
 
     ws.on("close", (_e) => {
