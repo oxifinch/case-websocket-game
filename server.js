@@ -3,6 +3,7 @@ import broadcastMessage from "./utils/broadcast.js";
 import saveMessage from "./utils/logging.js";
 import parseMessage from "./utils/parsing.js"; 
 import express from "express";
+import path from "path/posix";
 
 const WS_PORT = 8081;
 const EXPRESS_PORT = 8080;
@@ -13,6 +14,10 @@ const app = express();
 app.use(express.static("public"));
 app.listen(EXPRESS_PORT, () => {
     console.log("Serving static files on port", EXPRESS_PORT);
+});
+app.get("/", (req, res) => {
+    console.log("Send ze index pls");
+    res.sendFile(path.resolve("./public/index.html"));
 });
 
 // Main server function
