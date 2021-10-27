@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Websocket game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="app-container">
+        <h1>Let's Chat Together</h1>
         <section id="section-name">
             <div id="name-prompt">
-                <label for="name-prompt-input">Enter your name:</label>
+                <label for="name-prompt-input">Name:</label>
                 <input type="text" name="userName" id="name-prompt-input">            
                 <button id="name-prompt-button">Submit</button>
             </div>
@@ -28,6 +32,64 @@
             </div>
         </section>
     </div>
+
+    <div class="canvas">
+        <div class="sky"></div>
+        <div class="stars">
+          <div class="falling-stars">
+            <div class="star-fall"></div>
+            <div class="star-fall"></div>
+            <div class="star-fall"></div>
+            <div class="star-fall"></div>
+          </div>
+          <div class="small-stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+          <div class="medium-stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+          </div>
+        </div>
+        <div class="mountains"></div>
+        <div class="moon"></div>
+      
+          <div class="upper"></div>
+          <div class="bottom"></div>
+          <div class="shadow"></div>
+          <div class="line"></div>
+          
+        
+        <div class="trees">
+          <div class="tree"></div>
+          <div class="tree"></div>
+          <div class="tree"></div>
+          <div class="tree"></div>
+        </div>
+        <div class="floor"></div>
+      </div>
+</body>
+</html>
     
     <script src="chat-app.js"></script>
 </body>
