@@ -3,7 +3,7 @@ import broadcastMessage from "./utils/broadcast.js";
 import saveMessage from "./utils/logging.js";
 import parseMessage from "./utils/parsing.js"; 
 import express from "express";
-import path from "path/posix";
+import path from "path";
 
 const WS_PORT = 8081;
 const EXPRESS_PORT = 8080;
