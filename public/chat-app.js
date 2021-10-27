@@ -1,4 +1,6 @@
-const websocket = new WebSocket("ws://localhost:8081");
+var HOST = location.origin.replace(/^http/, 'ws')
+const websocket = new WebSocket(HOST);
+// const websocket = new WebSocket("ws://localhost:8081");
 
 var userName = undefined;
 const chatLog = document.querySelector("#chat-log");
